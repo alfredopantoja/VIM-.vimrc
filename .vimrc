@@ -45,3 +45,10 @@ map <leader>tf :tabfirst<CR>
 map <leader>tl :tablast<CR>
 map <leader>tm :tabmove
 
+" ================ Scrolling ========================
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+set shortmess+=I "Disable welcome screen
