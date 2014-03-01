@@ -26,7 +26,7 @@ set tabstop=2
 set expandtab
 
 set nowrap    "Don't wrap line
-set linebreak "Wrap lines at convenient points
+""set linebreak "Wrap lines at convenient points
 
 set pastetoggle=<F2>
 
@@ -47,8 +47,21 @@ map <leader>tm :tabmove
 
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
+""set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+""set sidescrolloff=15
+""set sidescroll=1
 
 set shortmess+=I "Disable welcome screen
+
+
+" ================ Syntax Complete ========================
+
+ if has("autocmd") && exists("+omnifunc") 
+autocmd Filetype * 
+    \	if &omnifunc == "" | 
+    \	 setlocal omnifunc=syntaxcomplete#Complete | 
+    \	endif 
+    endif 
+
+" ================= Get rid of line break with double curly braces ====
+" <leader>a toggles Autoclose on or off. Autoclose is what causes this issue
